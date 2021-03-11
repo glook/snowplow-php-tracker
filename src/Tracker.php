@@ -28,7 +28,7 @@ use Rhumsaa\Uuid\Uuid;
 class Tracker extends Constants {
 
     // Tracker Parameters
-    
+
     private $subject;
     private $emitters;
     private $encode_base64;
@@ -69,7 +69,7 @@ class Tracker extends Constants {
     }
 
     // Setter Functions
-    
+
     /**
      * Updates the subject of the tracker with a new subject
      *
@@ -283,7 +283,7 @@ class Tracker extends Constants {
      */
     public function trackEcommerceTransaction($order_id, $total_value, $currency = NULL, $affiliation = NULL,
                                               $tax_value = NULL, $shipping = NULL, $city = NULL, $state = NULL,
-                                              $country = NULL, $items, $context = NULL, $tstamp = NULL) {
+                                              $country = NULL, $items = array(), $context = NULL, $tstamp = NULL) {
         $ep = new Payload($tstamp);
         $ep->add("e", "tr");
         $ep->add("tr_id", $order_id);
